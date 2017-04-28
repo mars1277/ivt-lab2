@@ -20,7 +20,7 @@ public class GT4500Test {
   @Test
   public void fireTorpedos_Single_Success(){
     // Arrange
-    when(ship.fireTorpedos(FiringMode.SINGLE)).thenReturn(result);
+    when(ship.fireTorpedos(FiringMode.SINGLE)).thenReturn(true);
     // Act
     boolean result = ship.fireTorpedos(FiringMode.SINGLE);
 
@@ -31,12 +31,12 @@ public class GT4500Test {
   @Test
   public void fireTorpedos_All_Success(){
     // Arrange
-
+    when(ship.fireTorpedos(FiringMode.ALL)).thenReturn(true);
     // Act
     boolean result = ship.fireTorpedos(FiringMode.ALL);
 
     // Assert
-    assertEquals(true, result);
+    verify(ship, times(1)).fireTorpedos(FiringMode.ALL);
   }
 
 }
