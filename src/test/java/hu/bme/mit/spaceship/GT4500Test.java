@@ -24,13 +24,13 @@ public class GT4500Test {
   public void fireTorpedos_Single_Success(){
     // Arrange
     when(primary.fire(1)).thenReturn(true);
-    when(secondary.fire(1)).thenReturn(true);
+
     
     // Act
-    boolean result = ship.fireTorpedos(FiringMode.SINGLE);
+    ship.fireTorpedos(FiringMode.SINGLE);
 
     // Assert
-    verify(ship, times(1)).fireTorpedos(FiringMode.SINGLE);
+    verify(primary, times(1)).fire(1);
   }
 
   @Test
@@ -40,10 +40,11 @@ public class GT4500Test {
     when(secondary.fire(1)).thenReturn(true);
  
     // Act
-    boolean result = ship.fireTorpedos(FiringMode.ALL);
+    ship.fireTorpedos(FiringMode.ALL);
 
     // Assert
-    verify(ship, times(1)).fireTorpedos(FiringMode.ALL);
+    verify(primary, times(1)).fire(1);
+    verify(secondary, times(1)).fire(1);
   }
 
 }
