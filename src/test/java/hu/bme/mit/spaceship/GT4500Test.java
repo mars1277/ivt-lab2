@@ -20,12 +20,12 @@ public class GT4500Test {
   @Test
   public void fireTorpedos_Single_Success(){
     // Arrange
-
+    when(ship.fireTorpedos(FiringMode.SINGLE)).thenReturn(result);
     // Act
     boolean result = ship.fireTorpedos(FiringMode.SINGLE);
 
     // Assert
-    assertEquals(true, result);
+    verify(ship, times(1)).fireTorpedos(FiringMode.SINGLE);
   }
 
   @Test
