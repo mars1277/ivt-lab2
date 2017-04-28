@@ -12,7 +12,7 @@ public class GT4500Test {
 
   @Before
   public void init(){
-    this.ship = new GT4500();
+    this.ship = mock(GT4500.class);
   }
 
   @Test
