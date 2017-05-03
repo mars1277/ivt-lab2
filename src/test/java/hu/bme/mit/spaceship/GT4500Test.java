@@ -48,7 +48,7 @@ public class GT4500Test {
   }
 
   @Test
-  public void fireTorpedos_Single_Fail(){
+  public void fireTorpedos_Single_HalfSuccess(){
     // Arrange
     when(secondary.isEmpty()).thenReturn(false);
     when(primary.isEmpty()).thenReturn(true);
