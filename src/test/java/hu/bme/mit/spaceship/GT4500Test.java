@@ -64,8 +64,8 @@ public class GT4500Test {
   @Test
   public void fireTorpedos_Single_Fail(){
     // Arrange
-    when(secondary.isEmpty()).thenReturn(false);
-    when(primary.isEmpty()).thenReturn(false);
+    when(secondary.isEmpty()).thenReturn(true);
+    when(primary.isEmpty()).thenReturn(true);
  
     // Act
     ship.fireTorpedos(FiringMode.SINGLE);
