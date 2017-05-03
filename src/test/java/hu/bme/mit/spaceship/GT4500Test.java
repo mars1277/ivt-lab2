@@ -71,8 +71,8 @@ public class GT4500Test {
     ship.fireTorpedos(FiringMode.SINGLE);
 
     // Assert
-    verify(secondary, times(1)).isEmpty();
-    verify(primary, times(1)).isEmpty();
+    verify(secondary, times(0)).fire(1);
+    verify(primary, times(0)).fire(1);
   }
 
 }
