@@ -61,4 +61,18 @@ public class GT4500Test {
     verify(primary, times(1)).isEmpty();
   }
 
+  @Test
+  public void fireTorpedos_Single_Fail(){
+    // Arrange
+    when(secondary.isEmpty()).thenReturn(false);
+    when(primary.isEmpty()).thenReturn(false);
+ 
+    // Act
+    ship.fireTorpedos(FiringMode.SINGLE);
+
+    // Assert
+    verify(secondary, times(1)).isEmpty();
+    verify(primary, times(1)).isEmpty();
+  }
+
 }
